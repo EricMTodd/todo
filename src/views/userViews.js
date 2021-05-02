@@ -40,17 +40,17 @@ const userViews = (() => {
 			content.appendChild(lineBreak);
 		})();
 
-		// const renderConfirmPasswordInput = (() => {
-		// 	let input = document.createElement('input');
-		// 	let lineBreak = document.createElement('br');
+		const renderConfirmPasswordInput = (() => {
+			let input = document.createElement('input');
+			let lineBreak = document.createElement('br');
 
-		// 	input.type = 'password';
-		// 	input.id = 'create-user-confirm-password-input';
-		// 	input.placeholder = 'Confirm password';
-		// 	input.autocomplete = 'off';
-		// 	content.appendChild(input);
-		// 	content.appendChild(lineBreak);
-		// })();
+			input.type = 'password';
+			input.id = 'user-create-confirm-password-input';
+			input.placeholder = 'Confirm password';
+			input.autocomplete = 'off';
+			content.appendChild(input);
+			content.appendChild(lineBreak);
+		})();
 
 		const renderSubmitButton = (() => {
 			let button = document.createElement('button');
@@ -59,13 +59,13 @@ const userViews = (() => {
 			button.innerText = 'Submit';
 			button.addEventListener('click', (e) => {
 				user.create(
-					document.querySelector('#user-create-name-input').value,
-					document.querySelector('#user-create-email-input').value,
-					document.querySelector('#user-create-password-input').value
+					document.querySelector('#user-create-name-input').value.trim(),
+					document.querySelector('#user-create-email-input').value.trim(),
+					document.querySelector('#user-create-password-input').value.trim(),
+					document
+						.querySelector('#user-create-confirm-password-input')
+						.value.trim()
 				);
-				document.querySelector('#user-create-name-input').value = '';
-				document.querySelector('#user-create-email-input').value = '';
-				document.querySelector('#user-create-password-input').value = '';
 			});
 			content.appendChild(button);
 		})();
