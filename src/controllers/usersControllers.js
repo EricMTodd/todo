@@ -16,8 +16,8 @@ const usersControllers = (() => {
 			return;
 		}
 
-		let newUser = new User(storageObject.users.id, name, email, password);
-		storageObject.users.id++;
+		let newUser = new User(storageObject.users.count, name, email, password);
+		storageObject.users.count++;
 		alert(`${newUser.name} has been added to the database!`);
 		storageObject.users.usersList.push(newUser);
 		storage.save();
