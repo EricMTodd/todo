@@ -7,26 +7,120 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("const app = (() => {\n\tdocument.write('<h1>Hello world!</h1>');\n})();\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_storageControllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/storageControllers */ \"./src/controllers/storageControllers.js\");\n/* harmony import */ var _views_userViews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/userViews */ \"./src/views/userViews.js\");\n\n\n\nconst app = (() => {\n\tlet storageObject = _controllers_storageControllers__WEBPACK_IMPORTED_MODULE_0__.storageControllers.load();\n\t_views_userViews__WEBPACK_IMPORTED_MODULE_1__.userViews.renderCreateUserView();\n})();\n\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/controllers/storageControllers.js":
+/*!***********************************************!*\
+  !*** ./src/controllers/storageControllers.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"storageControllers\": () => (/* binding */ storageControllers)\n/* harmony export */ });\nconst storageControllers = (() => {\n\tlet storageObject;\n\tconst initStorage = (() => {\n\t\tif (!localStorage.todo) {\n\t\t\tlet storageString = JSON.stringify({ users: [] });\n\t\t\tlocalStorage.setItem('todo', storageString);\n\t\t}\n\t\tstorageObject = JSON.parse(localStorage.todo);\n\t})();\n\n\tconst load = () => {\n\t\treturn storageObject;\n\t};\n\n\tconst save = () => {\n\t\tlet storageString = JSON.stringify(storageObject);\n\t\tlocalStorage.setItem('todo', storageString);\n\t};\n\n\treturn {\n\t\tload,\n\t\tsave,\n\t};\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/controllers/storageControllers.js?");
+
+/***/ }),
+
+/***/ "./src/controllers/usersControllers.js":
+/*!*********************************************!*\
+  !*** ./src/controllers/usersControllers.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"usersControllers\": () => (/* binding */ usersControllers)\n/* harmony export */ });\n/* harmony import */ var _models_userModel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/userModel */ \"./src/models/userModel.js\");\n/* harmony import */ var _storageControllers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storageControllers */ \"./src/controllers/storageControllers.js\");\n\n\n\nconst usersControllers = (() => {\n\tlet storageObject = _storageControllers__WEBPACK_IMPORTED_MODULE_1__.storageControllers.load();\n\tconst create = (name, email, password) => {\n\t\tlet newUser = new _models_userModel__WEBPACK_IMPORTED_MODULE_0__.userModel(name, email, password);\n\t\tconsole.log(newUser);\n\t\tstorageObject.users.push(newUser);\n\t\t_storageControllers__WEBPACK_IMPORTED_MODULE_1__.storageControllers.save();\n\t};\n\treturn {\n\t\tcreate,\n\t};\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/controllers/usersControllers.js?");
+
+/***/ }),
+
+/***/ "./src/models/userModel.js":
+/*!*********************************!*\
+  !*** ./src/models/userModel.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"userModel\": () => (/* binding */ userModel)\n/* harmony export */ });\nclass userModel {\n\tconstructor(name, email, password) {\n\t\tthis.name = name;\n\t\tthis.email = email;\n\t\tthis.password = password;\n\t}\n}\n\n\n\n\n//# sourceURL=webpack:///./src/models/userModel.js?");
+
+/***/ }),
+
+/***/ "./src/views/userViews.js":
+/*!********************************!*\
+  !*** ./src/views/userViews.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"userViews\": () => (/* binding */ userViews)\n/* harmony export */ });\n/* harmony import */ var _controllers_usersControllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/usersControllers */ \"./src/controllers/usersControllers.js\");\n\n\nconst userViews = (() => {\n\tconst content = document.querySelector('#content');\n\n\tconst renderCreateUserView = () => {\n\t\tconst renderNameInput = (() => {\n\t\t\tlet input = document.createElement('input');\n\t\t\tlet lineBreak = document.createElement('br');\n\n\t\t\tinput.type = 'text';\n\t\t\tinput.id = 'user-create-name-input';\n\t\t\tinput.placeholder = 'Name';\n\t\t\tinput.autocomplete = 'off';\n\t\t\tcontent.appendChild(input);\n\t\t\tcontent.appendChild(lineBreak);\n\t\t})();\n\n\t\tconst renderEmailInput = (() => {\n\t\t\tlet input = document.createElement('input');\n\t\t\tlet lineBreak = document.createElement('br');\n\n\t\t\tinput.type = 'text';\n\t\t\tinput.id = 'user-create-email-input';\n\t\t\tinput.placeholder = 'Email';\n\t\t\tinput.auotcomplete = 'off';\n\t\t\tcontent.appendChild(input);\n\t\t\tcontent.appendChild(lineBreak);\n\t\t})();\n\n\t\tconst renderPasswordInput = (() => {\n\t\t\tlet input = document.createElement('input');\n\t\t\tlet lineBreak = document.createElement('br');\n\n\t\t\tinput.type = 'password';\n\t\t\tinput.id = 'user-create-password-input';\n\t\t\tinput.placeholder = 'Password';\n\t\t\tinput.autocomplete = 'off';\n\t\t\tcontent.appendChild(input);\n\t\t\tcontent.appendChild(lineBreak);\n\t\t})();\n\n\t\t// const renderConfirmPasswordInput = (() => {\n\t\t// \tlet input = document.createElement('input');\n\t\t// \tlet lineBreak = document.createElement('br');\n\n\t\t// \tinput.type = 'password';\n\t\t// \tinput.id = 'create-user-confirm-password-input';\n\t\t// \tinput.placeholder = 'Confirm password';\n\t\t// \tinput.autocomplete = 'off';\n\t\t// \tcontent.appendChild(input);\n\t\t// \tcontent.appendChild(lineBreak);\n\t\t// })();\n\n\t\tconst renderSubmitButton = (() => {\n\t\t\tlet button = document.createElement('button');\n\t\t\tbutton.type = 'button';\n\t\t\tbutton.id = 'create-new-user-button';\n\t\t\tbutton.innerText = 'Submit';\n\t\t\tbutton.addEventListener('click', (e) => {\n\t\t\t\t_controllers_usersControllers__WEBPACK_IMPORTED_MODULE_0__.usersControllers.create(\n\t\t\t\t\tdocument.querySelector('#user-create-name-input').value,\n\t\t\t\t\tdocument.querySelector('#user-create-email-input').value,\n\t\t\t\t\tdocument.querySelector('#user-create-password-input').value\n\t\t\t\t);\n\t\t\t\tdocument.querySelector('#user-create-name-input').value = '';\n\t\t\t\tdocument.querySelector('#user-create-email-input').value = '';\n\t\t\t\tdocument.querySelector('#user-create-password-input').value = '';\n\t\t\t});\n\t\t\tcontent.appendChild(button);\n\t\t})();\n\t};\n\n\treturn {\n\t\trenderCreateUserView,\n\t};\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/views/userViews.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/app.js"]();
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app.js");
 /******/ 	
 /******/ })()
 ;

@@ -1,3 +1,7 @@
+import { storageControllers as storage } from './controllers/storageControllers';
+import { userViews } from './views/userViews';
+
 const app = (() => {
-	document.write('<h1>Hello world!</h1>');
+	let storageObject = storage.load();
+	userViews.renderCreateUserView();
 })();
