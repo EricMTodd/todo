@@ -16,9 +16,10 @@ const usersControllers = (() => {
 			return;
 		}
 
-		let newUser = new User(name, email, password);
+		let newUser = new User(storageObject.users.id, name, email, password);
+		storageObject.users.id++;
 		alert(`${newUser.name} has been added to the database!`);
-		storageObject.users.push(newUser);
+		storageObject.users.usersList.push(newUser);
 		storage.save();
 		document.querySelector('#user-create-name-input').value = '';
 		document.querySelector('#user-create-email-input').value = '';
