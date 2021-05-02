@@ -5,15 +5,18 @@ const usersControllers = (() => {
 	let storageObject = storage.load();
 	const create = (name, email, password, confirmPassword) => {
 		if (name == '' || email == '' || password == '' || confirmPassword == '') {
-			alert('Please fill out all form fields.');
-			return;
+			return alert('Please fill out all form fields.');
 		}
-
+		for (let i = 0; i < storageObject.users.usersList.length; i++) {
+			if (email === storageObject.users.usersList[i].email) {
+				document.querySelector('#user-create-email-input').value = '';
+				return alert(`A user with that email already exists.`);
+			}
+		}
 		if (password !== confirmPassword) {
-			alert('Passwords do not match.');
 			document.querySelector('#user-create-password-input').value = '';
 			document.querySelector('#user-create-confirm-password-input').value = '';
-			return;
+			return alert('Passwords do not match.');
 		}
 
 		let newUser = new User(storageObject.users.count, name, email, password);

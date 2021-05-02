@@ -3,7 +3,7 @@ const storageControllers = (() => {
 	const initStorage = (() => {
 		if (!localStorage.todo) {
 			let storageString = JSON.stringify({
-				users: { count: 0, usersList: [] },
+				users: { count: 0, loggedInUser: null, usersList: [] },
 			});
 			localStorage.setItem('todo', storageString);
 		}
