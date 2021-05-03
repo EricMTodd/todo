@@ -3,6 +3,7 @@ import { storageControllers as storage } from './storageControllers';
 
 const usersControllers = (() => {
 	let storageObject = storage.load();
+
 	const create = (name, email, password, confirmPassword) => {
 		if (name == '' || email == '' || password == '' || confirmPassword == '') {
 			return alert('Please fill out all form fields.');

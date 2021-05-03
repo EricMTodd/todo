@@ -1,7 +1,6 @@
-import { storageControllers as storage } from './controllers/storageControllers';
-import { userViews } from './views/userViews';
+import { indexViews } from './views/indexViews';
+import { loginViews } from './views/loginViews';
 
 const app = (() => {
-	let storageObject = storage.load();
-	userViews.renderCreateUserView();
+	loginViews.renderLoginForm();
 })();

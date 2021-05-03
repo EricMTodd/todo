@@ -3,53 +3,55 @@ import { usersControllers as user } from '../controllers/usersControllers';
 const userViews = (() => {
 	const content = document.querySelector('#content');
 
-	const renderCreateUserView = () => {
+	const renderCreateUserForm = () => {
+		content.innerHTML = '';
+		let form = document.createElement('form');
+		let fieldset = document.createElement('fieldset');
+		let legend = document.createElement('legend');
+		legend.innerText = 'Create User';
+		fieldset.appendChild(legend);
+		form.appendChild(fieldset);
+		content.appendChild(form);
+
 		const renderNameInput = (() => {
 			let input = document.createElement('input');
-			let lineBreak = document.createElement('br');
-
 			input.type = 'text';
 			input.id = 'user-create-name-input';
 			input.placeholder = 'Name';
 			input.autocomplete = 'off';
-			content.appendChild(input);
-			content.appendChild(lineBreak);
+			fieldset.appendChild(input);
+			fieldset.appendChild(document.createElement('br'));
 		})();
 
 		const renderEmailInput = (() => {
 			let input = document.createElement('input');
-			let lineBreak = document.createElement('br');
-
 			input.type = 'text';
 			input.id = 'user-create-email-input';
 			input.placeholder = 'Email';
 			input.auotcomplete = 'off';
-			content.appendChild(input);
-			content.appendChild(lineBreak);
+			fieldset.appendChild(input);
+			fieldset.appendChild(document.createElement('br'));
 		})();
 
 		const renderPasswordInput = (() => {
 			let input = document.createElement('input');
-			let lineBreak = document.createElement('br');
-
 			input.type = 'password';
 			input.id = 'user-create-password-input';
 			input.placeholder = 'Password';
 			input.autocomplete = 'off';
-			content.appendChild(input);
-			content.appendChild(lineBreak);
+			fieldset.appendChild(input);
+			fieldset.appendChild(document.createElement('br'));
 		})();
 
 		const renderConfirmPasswordInput = (() => {
 			let input = document.createElement('input');
-			let lineBreak = document.createElement('br');
-
 			input.type = 'password';
 			input.id = 'user-create-confirm-password-input';
 			input.placeholder = 'Confirm password';
 			input.autocomplete = 'off';
-			content.appendChild(input);
-			content.appendChild(lineBreak);
+			fieldset.appendChild(input);
+			fieldset.appendChild(document.createElement('br'));
+			fieldset.appendChild(document.createElement('br'));
 		})();
 
 		const renderSubmitButton = (() => {
@@ -67,12 +69,12 @@ const userViews = (() => {
 						.value.trim()
 				);
 			});
-			content.appendChild(button);
+			fieldset.appendChild(button);
 		})();
 	};
 
 	return {
-		renderCreateUserView,
+		renderCreateUserForm,
 	};
 })();
 
