@@ -1,8 +1,8 @@
 import { User } from '../models/userModel';
-import { storageControllers as storage } from './storageControllers';
+import { storageControllers } from './storageControllers';
 
 const usersControllers = (() => {
-	let storageObject = storage.load();
+	let storageObject = storageControllers.load();
 
 	const create = (name, email, password, confirmPassword) => {
 		if (name == '' || email == '' || password == '' || confirmPassword == '') {
@@ -24,15 +24,26 @@ const usersControllers = (() => {
 		storageObject.users.count++;
 		alert(`${newUser.name} has been added to the database!`);
 		storageObject.users.usersList.push(newUser);
-		storage.save();
+		storageControllers.save();
 		document.querySelector('#user-create-name-input').value = '';
 		document.querySelector('#user-create-email-input').value = '';
 		document.querySelector('#user-create-password-input').value = '';
 		document.querySelector('#user-create-confirm-password-input').value = '';
 	};
 
+	const find = (email) => {
+		let usersList = storageObject.users.usersList;
+		for (let i = 0; i < usersList.length; i++) {
+			if (email === usersList[i].email) {
+				return usersList[i];
+			}
+		}
+		return console.log('No match found.');
+	};
+
 	return {
 		create,
+		find,
 	};
 })();
 

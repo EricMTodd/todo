@@ -1,6 +1,5 @@
-import { indexViews } from './views/indexViews';
-import { loginViews } from './views/loginViews';
+import { authViews } from './views/authViews';
 
 const app = (() => {
-	loginViews.renderLoginForm();
+	authViews.renderLoginForm();
 })();

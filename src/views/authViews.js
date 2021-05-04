@@ -1,7 +1,8 @@
 import { userViews } from './userViews';
-import { loginControllers as login } from '../controllers/loginControllers';
+import { authControllers } from '../controllers/authControllers';
+import { usersControllers } from '../controllers/usersControllers';
 
-const loginViews = (() => {
+const authViews = (() => {
 	const content = document.querySelector('#content');
 
 	const renderLoginForm = () => {
@@ -17,6 +18,7 @@ const loginViews = (() => {
 		const renderEmailInput = (() => {
 			let input = document.createElement('input');
 			input.type = 'text';
+			input.id = 'login-email-input';
 			input.placeholder = 'Email';
 			input.autocomplete = 'off';
 			fieldset.appendChild(input);
@@ -26,6 +28,7 @@ const loginViews = (() => {
 		const renderPasswordInput = (() => {
 			let input = document.createElement('input');
 			input.type = 'password';
+			input.id = 'login-password-input';
 			input.placeholder = 'Password';
 			input.autocomplete = 'off';
 			fieldset.appendChild(input);
@@ -38,7 +41,10 @@ const loginViews = (() => {
 			button.type = 'button';
 			button.innerText = 'Login';
 			button.addEventListener('click', (e) => {
-				login.login();
+				authControllers.login(
+					document.querySelector('#login-email-input').value,
+					document.querySelector('#login-password-input').value
+				);
 			});
 			fieldset.appendChild(button);
 		})();
@@ -61,4 +67,4 @@ const loginViews = (() => {
 	};
 })();
 
-export { loginViews };
+export { authViews };
