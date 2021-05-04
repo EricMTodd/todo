@@ -1,5 +1,6 @@
 import { User } from '../models/userModel';
 import { storageControllers } from './storageControllers';
+import { authControllers } from './authControllers';
 
 const usersControllers = (() => {
 	let storageObject = storageControllers.load();
@@ -20,7 +21,15 @@ const usersControllers = (() => {
 			return alert('Passwords do not match.');
 		}
 
-		let newUser = new User(storageObject.users.count, name, email, password);
+		let encryptedString = authControllers.encrypt(password);
+
+		let newUser = new User(
+			storageObject.users.count,
+			name,
+			email,
+			encryptedString
+		);
+
 		storageObject.users.count++;
 		alert(`${newUser.name} has been added to the database!`);
 		storageObject.users.usersList.push(newUser);
