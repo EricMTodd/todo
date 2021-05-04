@@ -1,5 +1,2 @@
-import { authViews } from './views/authViews';
-
-const app = (() => {
-	authViews.renderLoginForm();
-})();
+import { indexViews } from './views/indexViews';
+const app = (() => {})();

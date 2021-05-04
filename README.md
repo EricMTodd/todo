@@ -6,7 +6,7 @@ Lesson link: https://www.theodinproject.com/paths/full-stack-javascript/courses/
 
 ### User accounts with password encryption
 
-- Encryption implemented. Users must now be stored in sessions.
+- Complete
 
 ### Users can create lists
 

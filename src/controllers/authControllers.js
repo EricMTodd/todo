@@ -1,7 +1,9 @@
 import { usersControllers } from './usersControllers';
 import { storageControllers } from './storageControllers';
+import { indexViews } from '../views/indexViews';
 
 const authControllers = (() => {
+	let storageObject = storageControllers.load();
 	const alphanumerics =
 		' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+[{]}|,<.>/?`~';
 
@@ -143,15 +145,24 @@ const authControllers = (() => {
 		let encryptedString = user.password;
 		let decryptedPassword = decrypt(encryptedString, password);
 		if (password === decryptedPassword) {
-			return console.log(`${user.name} logged in!`);
+			storageObject.users.loggedInUser = user;
+			storageControllers.save();
+			return indexViews.renderUserIndex();
 		}
 		return console.log(`Failed to log ${user.name} in.`);
+	};
+
+	const logout = () => {
+		storageObject.users.loggedInUser = null;
+		storageControllers.save();
+		window.location.reload();
 	};
 
 	return {
 		encrypt,
 		// decrypt,
 		login,
+		logout,
 	};
 })();
 
