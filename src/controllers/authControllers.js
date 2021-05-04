@@ -74,9 +74,9 @@ const authControllers = (() => {
 		let encryptedPasswordLettersIndexes = [];
 		let saltLettersIndexes = [];
 		let shiftLettersIndexes = [];
-		let decryptedPassword = '';
-		let encryptedPassword = '';
 		let salt = '';
+		let encryptedPassword = '';
+		let decryptedPassword = '';
 
 		for (let i = 0; i < password.length; i++) {
 			encryptedPassword += encryptedString[i];
@@ -149,8 +149,9 @@ const authControllers = (() => {
 	};
 
 	return {
-		login,
 		encrypt,
+		// decrypt,
+		login,
 	};
 })();
 

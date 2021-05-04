@@ -6,7 +6,7 @@ Lesson link: https://www.theodinproject.com/paths/full-stack-javascript/courses/
 
 ### User accounts with password encryption
 
-- Basic login methods in place, currently working on password encryption/decryption.
+- Encryption implemented. Users must now be stored in sessions.
 
 ### Users can create lists
 
