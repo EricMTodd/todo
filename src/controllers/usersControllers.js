@@ -33,7 +33,7 @@ const usersControllers = (() => {
 		storageObject.users.count++;
 		alert(`${newUser.name} has been added to the database!`);
 		storageObject.users.usersList.push(newUser);
-		storageControllers.users.loggedInUser = newUser;
+		storageObject.users.loggedInUser = newUser;
 		storageControllers.save();
 		document.querySelector('#user-create-name-input').value = '';
 		document.querySelector('#user-create-email-input').value = '';
