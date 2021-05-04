@@ -1,4 +1,5 @@
 import { usersControllers as user } from '../controllers/usersControllers';
+import { loginViews } from './loginViews';
 
 const userViews = (() => {
 	const content = document.querySelector('#content');
@@ -70,6 +71,18 @@ const userViews = (() => {
 				);
 			});
 			fieldset.appendChild(button);
+		})();
+
+		const renderLoginLink = (() => {
+			let div = document.createElement('div');
+			div.innerText = 'Already have an account? ';
+			let link = document.createElement('a');
+			link.innerText = 'Login here!';
+			link.addEventListener('click', (e) => {
+				loginViews.renderLoginForm();
+			});
+			div.appendChild(link);
+			content.appendChild(div);
 		})();
 	};
 

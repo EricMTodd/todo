@@ -1,4 +1,5 @@
 import { userViews } from './userViews';
+import { loginControllers as login } from '../controllers/loginControllers';
 
 const loginViews = (() => {
 	const content = document.querySelector('#content');
@@ -37,7 +38,7 @@ const loginViews = (() => {
 			button.type = 'button';
 			button.innerText = 'Login';
 			button.addEventListener('click', (e) => {
-				console.log('click');
+				login.login();
 			});
 			fieldset.appendChild(button);
 		})();
