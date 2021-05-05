@@ -1,7 +1,7 @@
 import { usersControllers } from '../controllers/usersControllers';
 import { authViews } from './authViews';
 
-const userViews = (() => {
+const usersViews = (() => {
 	const content = document.querySelector('#content');
 
 	const renderCreateUserForm = () => {
@@ -29,7 +29,7 @@ const userViews = (() => {
 			input.type = 'text';
 			input.id = 'user-create-email-input';
 			input.placeholder = 'Email';
-			input.auotcomplete = 'off';
+			input.autocomplete = 'off';
 			fieldset.appendChild(input);
 			fieldset.appendChild(document.createElement('br'));
 		})();
@@ -91,4 +91,4 @@ const userViews = (() => {
 	};
 })();
 
-export { userViews };
+export { usersViews };

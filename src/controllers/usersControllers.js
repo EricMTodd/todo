@@ -36,10 +36,6 @@ const usersControllers = (() => {
 		storageObject.users.usersList.push(newUser);
 		storageObject.users.loggedInUser = newUser;
 		storageControllers.save();
-		// document.querySelector('#user-create-name-input').value = '';
-		// document.querySelector('#user-create-email-input').value = '';
-		// document.querySelector('#user-create-password-input').value = '';
-		// document.querySelector('#user-create-confirm-password-input').value = '';
 		return indexViews.renderUserIndex();
 	};
 

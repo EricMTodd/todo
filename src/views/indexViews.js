@@ -44,6 +44,7 @@ const indexViews = (() => {
 	})();
 	return {
 		renderUserIndex,
+		renderNoUserIndex,
 	};
 })();
 

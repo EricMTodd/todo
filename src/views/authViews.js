@@ -1,6 +1,6 @@
-import { userViews } from './userViews';
+import { usersViews } from './usersViews';
 import { authControllers } from '../controllers/authControllers';
-import { usersControllers } from '../controllers/usersControllers';
+// import { usersControllers } from '../controllers/usersControllers';
 
 const authViews = (() => {
 	const content = document.querySelector('#content');
@@ -42,8 +42,8 @@ const authViews = (() => {
 			button.innerText = 'Login';
 			button.addEventListener('click', (e) => {
 				authControllers.login(
-					document.querySelector('#login-email-input').value,
-					document.querySelector('#login-password-input').value
+					document.querySelector('#login-email-input').value.trim(),
+					document.querySelector('#login-password-input').value.trim()
 				);
 			});
 			fieldset.appendChild(button);
@@ -55,7 +55,7 @@ const authViews = (() => {
 			let link = document.createElement('a');
 			link.innerText = 'Create one here!';
 			link.addEventListener('click', (e) => {
-				userViews.renderCreateUserForm();
+				usersViews.renderCreateUserForm();
 			});
 			content.appendChild(div);
 			div.appendChild(link);
