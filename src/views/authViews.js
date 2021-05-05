@@ -53,6 +53,7 @@ const authViews = (() => {
 			let div = document.createElement('div');
 			div.innerText = `Need an account? `;
 			let link = document.createElement('a');
+			link.id = 'create-user-link';
 			link.innerText = 'Create one here!';
 			link.addEventListener('click', (e) => {
 				usersViews.renderCreateUserForm();
