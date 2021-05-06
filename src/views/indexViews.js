@@ -29,7 +29,7 @@ const indexViews = (() => {
 			aboutContainer.className = 'container';
 			let indexHeader = document.createElement('h1');
 			indexHeader.innerText = `Welcome to #todo!`;
-			let aboutHeader = document.createElement('h3');
+			let aboutHeader = document.createElement('h2');
 			aboutHeader.innerText = `What is #todo?`;
 			let aboutText = document.createElement('p');
 			aboutText.innerText = `#todo is a place to keep all your lists of things, whatver they may be. Simply create an account, login and start making your day to day more productive!`;
