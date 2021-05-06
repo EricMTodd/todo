@@ -1,6 +1,4 @@
-import { usersViews } from './usersViews';
 import { authControllers } from '../controllers/authControllers';
-// import { usersControllers } from '../controllers/usersControllers';
 
 const authViews = (() => {
 	const content = document.querySelector('#content');
@@ -47,19 +45,6 @@ const authViews = (() => {
 				);
 			});
 			fieldset.appendChild(button);
-		})();
-
-		const renderCreateUserFormLink = (() => {
-			let div = document.createElement('div');
-			div.innerText = `Need an account? `;
-			let link = document.createElement('a');
-			link.id = 'create-user-link';
-			link.innerText = 'Create one here!';
-			link.addEventListener('click', (e) => {
-				usersViews.renderCreateUserForm();
-			});
-			content.appendChild(div);
-			div.appendChild(link);
 		})();
 	};
 

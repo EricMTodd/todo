@@ -1,13 +1,11 @@
-import { storageControllers } from '../controllers/storageControllers';
 import { authControllers } from '../controllers/authControllers';
 import { authViews } from '../views/authViews';
 
 const indexViews = (() => {
-	const content = document.querySelector('#content');
-	let storageObject = storageControllers.load();
+	const main = document.querySelector('main');
 
 	const renderUserIndex = () => {
-		content.innerHTML = '';
+		main.innerHTML = '';
 		let container = document.createElement('div');
 		let welcomeMessage = document.createElement('h1');
 		welcomeMessage.innerText = `Welcome ${storageObject.users.loggedInUser.name}!`;
@@ -18,11 +16,11 @@ const indexViews = (() => {
 		});
 		container.appendChild(welcomeMessage);
 		container.appendChild(link);
-		content.appendChild(container);
+		main.appendChild(container);
 	};
 
 	const renderNoUserIndex = () => {
-		content.innerHTML = '';
+		main.innerHTML = '';
 		const renderAboutContainer = (() => {
 			let aboutContainer = document.createElement('div');
 			aboutContainer.id = 'about-container';
@@ -42,7 +40,7 @@ const indexViews = (() => {
 			aboutContainer.appendChild(aboutHeader);
 			aboutContainer.appendChild(aboutText);
 			aboutContainer.appendChild(button);
-			content.appendChild(aboutContainer);
+			main.appendChild(aboutContainer);
 		})();
 	};
 

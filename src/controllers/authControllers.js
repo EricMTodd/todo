@@ -1,6 +1,6 @@
-import { usersControllers } from './usersControllers';
 import { storageControllers } from './storageControllers';
 import { indexViews } from '../views/indexViews';
+import { usersControllers } from './usersControllers';
 
 const authControllers = (() => {
 	let storageObject = storageControllers.load();
