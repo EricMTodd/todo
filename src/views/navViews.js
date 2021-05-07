@@ -2,17 +2,12 @@ import { indexViews } from './indexViews';
 
 const navViews = (() => {
 	let nav = document.querySelector('nav');
+	let indexButton = document.querySelector('#index-button');
+	indexButton.addEventListener('click', (e) => {
+		indexViews.checkLogin();
+	});
 
 	const renderLoginControlsContainer = () => {
-		const renderIndexButton = (() => {
-			let button = document.createElement('button');
-			button.innerText = 'Index';
-			button.addEventListener('click', (e) => {
-				indexViews.checkLogin;
-			});
-			return nav.appendChild(button);
-		})();
-
 		const renderLoginButton = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Login';

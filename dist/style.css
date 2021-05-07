@@ -4,6 +4,25 @@
 	text-align: center;
 }
 
+::placeholder {
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
 nav {
 	display: flex;
 	align-items: center;
@@ -15,6 +34,12 @@ nav {
 
 nav button {
 	margin: 0 0 0 10px;
+}
+
+nav h1 {
+	margin-left: 18.25%;
+	width: 50%;
+	color: white;
 }
 
 .push {
@@ -33,6 +58,7 @@ main {
 input {
 	padding: 10px;
 	margin-bottom: 5px;
+	border-radius: 10px;
 }
 
 .container {
@@ -63,10 +89,4 @@ footer {
 footer a,
 p {
 	margin: 0 5px 0 0;
-}
-
-button {
-	font-size: 20px;
-	border-radius: 10px;
-	padding: 10px;
 }

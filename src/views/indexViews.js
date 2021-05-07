@@ -6,6 +6,7 @@ import { storageControllers } from '../controllers/storageControllers';
 const indexViews = (() => {
 	let storageObject = storageControllers.load();
 	let main = document.querySelector('main');
+	navViews.renderLoginControlsContainer();
 
 	const renderUserIndex = () => {
 		main.innerHTML = '';
@@ -23,7 +24,7 @@ const indexViews = (() => {
 	};
 
 	const renderNoUserIndex = () => {
-		navViews.renderLoginControlsContainer();
+		main.innerHTML = '';
 
 		const renderAboutContainer = (() => {
 			let aboutContainer = document.createElement('div');
