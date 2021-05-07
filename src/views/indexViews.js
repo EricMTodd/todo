@@ -1,8 +1,11 @@
 import { authControllers } from '../controllers/authControllers';
 import { authViews } from '../views/authViews';
+import { navViews } from '../views/navViews';
+import { storageControllers } from '../controllers/storageControllers';
 
 const indexViews = (() => {
-	const main = document.querySelector('main');
+	let storageObject = storageControllers.load();
+	let main = document.querySelector('main');
 
 	const renderUserIndex = () => {
 		main.innerHTML = '';
@@ -20,10 +23,10 @@ const indexViews = (() => {
 	};
 
 	const renderNoUserIndex = () => {
-		main.innerHTML = '';
+		navViews.renderLoginControlsContainer();
+
 		const renderAboutContainer = (() => {
 			let aboutContainer = document.createElement('div');
-			aboutContainer.id = 'about-container';
 			aboutContainer.className = 'container';
 			let indexHeader = document.createElement('h1');
 			indexHeader.innerText = `Welcome to #todo!`;

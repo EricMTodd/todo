@@ -1,17 +1,17 @@
 import { usersControllers } from '../controllers/usersControllers';
 
 const usersViews = (() => {
-	const content = document.querySelector('#content');
+	const main = document.querySelector('main');
 
 	const renderCreateUserForm = () => {
-		content.innerHTML = '';
+		main.innerHTML = '';
 		let form = document.createElement('form');
 		let fieldset = document.createElement('fieldset');
 		let legend = document.createElement('legend');
 		legend.innerText = 'Create User';
 		fieldset.appendChild(legend);
 		form.appendChild(fieldset);
-		content.appendChild(form);
+		main.appendChild(form);
 
 		const renderNameInput = (() => {
 			let input = document.createElement('input');
