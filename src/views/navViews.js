@@ -1,4 +1,6 @@
 import { indexViews } from './indexViews';
+import { usersViews } from './usersViews';
+import { authViews } from './authViews';
 
 const navViews = (() => {
 	let nav = document.querySelector('nav');
@@ -11,12 +13,20 @@ const navViews = (() => {
 		const renderLoginButton = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Login';
+			button.id = 'login-logout-button';
 			button.className = 'push';
+			button.addEventListener('click', (e) => {
+				authViews.renderLoginForm();
+			});
 			return nav.appendChild(button);
 		})();
 		const renderCreateUserButton = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Signup';
+			button.id = 'signup-button';
+			button.addEventListener('click', (e) => {
+				usersViews.renderCreateUserForm();
+			});
 			return nav.appendChild(button);
 		})();
 	};

@@ -6,11 +6,10 @@ const usersViews = (() => {
 	const renderCreateUserForm = () => {
 		main.innerHTML = '';
 		let form = document.createElement('form');
-		let fieldset = document.createElement('fieldset');
-		let legend = document.createElement('legend');
-		legend.innerText = 'Create User';
-		fieldset.appendChild(legend);
-		form.appendChild(fieldset);
+		form.className = 'container';
+		let h1 = document.createElement('h1');
+		h1.innerText = 'Signup';
+		form.appendChild(h1);
 		main.appendChild(form);
 
 		const renderNameInput = (() => {
@@ -19,8 +18,8 @@ const usersViews = (() => {
 			input.id = 'user-create-name-input';
 			input.placeholder = 'Name';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderEmailInput = (() => {
@@ -29,8 +28,8 @@ const usersViews = (() => {
 			input.id = 'user-create-email-input';
 			input.placeholder = 'Email';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderPasswordInput = (() => {
@@ -39,8 +38,8 @@ const usersViews = (() => {
 			input.id = 'user-create-password-input';
 			input.placeholder = 'Password';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderConfirmPasswordInput = (() => {
@@ -49,9 +48,8 @@ const usersViews = (() => {
 			input.id = 'user-create-confirm-password-input';
 			input.placeholder = 'Confirm password';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderSubmitButton = (() => {
@@ -69,7 +67,7 @@ const usersViews = (() => {
 						.value.trim()
 				);
 			});
-			fieldset.appendChild(button);
+			form.appendChild(button);
 		})();
 	};
 
