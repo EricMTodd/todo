@@ -30,6 +30,11 @@ main {
 	height: 80vh;
 }
 
+input {
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
 .container {
 	width: 480px;
 	background-color: white;

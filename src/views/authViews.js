@@ -1,17 +1,16 @@
 import { authControllers } from '../controllers/authControllers';
 
 const authViews = (() => {
-	const content = document.querySelector('#content');
+	const main = document.querySelector('main');
 
 	const renderLoginForm = () => {
-		content.innerHTML = '';
+		main.innerHTML = '';
 		let form = document.createElement('form');
-		let fieldset = document.createElement('fieldset');
-		let legend = document.createElement('legend');
-		legend.innerText = 'Login';
-		fieldset.appendChild(legend);
-		form.appendChild(fieldset);
-		content.appendChild(form);
+		form.className = 'container';
+		let h2 = document.createElement('h2');
+		h2.innerText = 'Login';
+		form.appendChild(h2);
+		main.appendChild(form);
 
 		const renderEmailInput = (() => {
 			let input = document.createElement('input');
@@ -19,8 +18,8 @@ const authViews = (() => {
 			input.id = 'login-email-input';
 			input.placeholder = 'Email';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderPasswordInput = (() => {
@@ -29,9 +28,8 @@ const authViews = (() => {
 			input.id = 'login-password-input';
 			input.placeholder = 'Password';
 			input.autocomplete = 'off';
-			fieldset.appendChild(input);
-			fieldset.appendChild(document.createElement('br'));
-			fieldset.appendChild(document.createElement('br'));
+			form.appendChild(input);
+			form.appendChild(document.createElement('br'));
 		})();
 
 		const renderLoginButton = (() => {
@@ -44,7 +42,7 @@ const authViews = (() => {
 					document.querySelector('#login-password-input').value.trim()
 				);
 			});
-			fieldset.appendChild(button);
+			form.appendChild(button);
 		})();
 	};
 
