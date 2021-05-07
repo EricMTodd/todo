@@ -1,6 +1,7 @@
 import { indexViews } from './indexViews';
 import { usersViews } from './usersViews';
 import { authViews } from './authViews';
+import { authControllers } from '../controllers/authControllers';
 
 const navViews = (() => {
 	let nav = document.querySelector('nav');
@@ -9,7 +10,11 @@ const navViews = (() => {
 		indexViews.checkLogin();
 	});
 
-	const renderLoginControlsContainer = () => {
+	let authButtonsContainer = document.querySelector('#auth-buttons-container');
+
+	const renderLoginButtons = () => {
+		authButtonsContainer.innerHTML = '';
+
 		const renderLoginButton = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Login';
@@ -18,7 +23,7 @@ const navViews = (() => {
 			button.addEventListener('click', (e) => {
 				authViews.renderLoginForm();
 			});
-			return nav.appendChild(button);
+			return authButtonsContainer.appendChild(button);
 		})();
 		const renderCreateUserButton = (() => {
 			let button = document.createElement('button');
@@ -27,12 +32,25 @@ const navViews = (() => {
 			button.addEventListener('click', (e) => {
 				usersViews.renderCreateUserForm();
 			});
-			return nav.appendChild(button);
+			return authButtonsContainer.appendChild(button);
 		})();
 	};
 
+	const renderLogoutButton = () => {
+		authButtonsContainer.innerHTML = '';
+		let button = document.createElement('button');
+		button.innerText = 'Logout';
+		button.id = 'logout-button';
+		button.className = 'push';
+		button.addEventListener('click', (e) => {
+			authControllers.logout();
+		});
+		authButtonsContainer.appendChild(button);
+	};
+
 	return {
-		renderLoginControlsContainer,
+		renderLoginButtons,
+		renderLogoutButton,
 	};
 })();
 
