@@ -16,7 +16,7 @@ const navViews = (() => {
 		})();
 		const renderCreateUserButton = (() => {
 			let button = document.createElement('button');
-			button.innerText = 'Sign Up';
+			button.innerText = 'Signup';
 			return nav.appendChild(button);
 		})();
 	};
