@@ -19,7 +19,6 @@ const navViews = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Login';
 			button.id = 'login-logout-button';
-			button.className = 'push';
 			button.addEventListener('click', (e) => {
 				authViews.renderLoginForm();
 			});
@@ -41,7 +40,6 @@ const navViews = (() => {
 		let button = document.createElement('button');
 		button.innerText = 'Logout';
 		button.id = 'logout-button';
-		button.className = 'push';
 		button.addEventListener('click', (e) => {
 			authControllers.logout();
 		});
