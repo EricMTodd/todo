@@ -1,7 +1,8 @@
-import { authControllers } from '../controllers/authControllers';
+// import { authControllers } from '../controllers/authControllers';
+import { storageControllers } from '../controllers/storageControllers';
 import { authViews } from '../views/authViews';
 import { navViews } from '../views/navViews';
-import { storageControllers } from '../controllers/storageControllers';
+import { listsViews } from '../views/listsViews';
 
 const indexViews = (() => {
 	let storageObject = storageControllers.load();
@@ -10,11 +11,12 @@ const indexViews = (() => {
 	const renderUserIndex = () => {
 		navViews.renderLogoutButton();
 		main.innerHTML = '';
-		let container = document.createElement('div');
-		let welcomeMessage = document.createElement('h1');
-		welcomeMessage.innerText = `Welcome ${storageObject.users.loggedInUser.name}!`;
-		container.appendChild(welcomeMessage);
-		main.appendChild(container);
+		// let container = document.createElement('div');
+		// let welcomeMessage = document.createElement('h1');
+		// welcomeMessage.innerText = `Welcome ${storageObject.users.loggedInUser.name}!`;
+		// container.appendChild(welcomeMessage);
+		// main.appendChild(container);
+		listsViews.renderCreateListContainer();
 	};
 
 	const renderNoUserIndex = () => {
