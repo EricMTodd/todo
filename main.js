@@ -16,7 +16,7 @@
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_indexViews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/indexViews */ \"./src/views/indexViews.js\");\n/* harmony import */ var _views_navViews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./views/navViews */ \"./src/views/navViews.js\");\n\n\n\nconst app = (() => {\n\t_views_indexViews__WEBPACK_IMPORTED_MODULE_0__.indexViews.checkLogin();\n\treturn {};\n})();\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_indexViews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./views/indexViews */ \"./src/views/indexViews.js\");\n\n\nconst app = (() => {\n\t_views_indexViews__WEBPACK_IMPORTED_MODULE_0__.indexViews.checkLogin();\n\treturn {};\n})();\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"storageControllers\": () => (/* binding */ storageControllers)\n/* harmony export */ });\nconst storageControllers = (() => {\n\tlet storageObject;\n\tconst initStorage = (() => {\n\t\tif (!localStorage.todo) {\n\t\t\tlet storageString = JSON.stringify({\n\t\t\t\tusers: { count: 0, loggedInUser: null, usersList: [], lists: [] },\n\t\t\t});\n\t\t\tlocalStorage.setItem('todo', storageString);\n\t\t}\n\t\tstorageObject = JSON.parse(localStorage.todo);\n\t})();\n\n\tconst load = () => {\n\t\treturn storageObject;\n\t};\n\n\tconst save = () => {\n\t\tlet storageString = JSON.stringify(storageObject);\n\t\tlocalStorage.setItem('todo', storageString);\n\t};\n\n\treturn {\n\t\tload,\n\t\tsave,\n\t};\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/controllers/storageControllers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"storageControllers\": () => (/* binding */ storageControllers)\n/* harmony export */ });\nconst storageControllers = (() => {\n\tlet storageObject;\n\tconst initStorage = (() => {\n\t\tif (!localStorage.todo) {\n\t\t\tlet storageString = JSON.stringify({\n\t\t\t\tusers: { count: 0, loggedInUser: null, usersList: [] },\n\t\t\t});\n\t\t\tlocalStorage.setItem('todo', storageString);\n\t\t}\n\t\tstorageObject = JSON.parse(localStorage.todo);\n\t})();\n\n\tconst load = () => {\n\t\treturn storageObject;\n\t};\n\n\tconst save = () => {\n\t\tlet storageString = JSON.stringify(storageObject);\n\t\tlocalStorage.setItem('todo', storageString);\n\t};\n\n\treturn {\n\t\tload,\n\t\tsave,\n\t};\n})();\n\n\n\n\n//# sourceURL=webpack:///./src/controllers/storageControllers.js?");
 
 /***/ }),
 
