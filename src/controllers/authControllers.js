@@ -155,7 +155,7 @@ const authControllers = (() => {
 	const logout = () => {
 		storageObject.users.loggedInUser = null;
 		storageControllers.save();
-		indexViews.renderNoUserIndex();
+		window.location.reload();
 	};
 
 	return {

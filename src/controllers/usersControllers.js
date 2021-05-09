@@ -25,14 +25,13 @@ const usersControllers = (() => {
 		let encryptedString = authControllers.encrypt(password);
 
 		let newUser = new User(
-			storageObject.users.count,
+			storageObject.uniqueId,
 			name,
 			email,
 			encryptedString
 		);
 
-		storageObject.users.count++;
-		alert(`${newUser.name} has been added to the database!`);
+		storageObject.uniqueId++;
 		storageObject.users.usersList.push(newUser);
 		storageObject.users.loggedInUser = newUser;
 		storageControllers.save();

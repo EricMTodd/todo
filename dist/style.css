@@ -100,3 +100,17 @@ p {
 #auth-buttons-container {
 	text-align: right;
 }
+
+.list-view {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.list-create-container {
+	width: 300px;
+}
+
+.list-create-container input {
+	width: 250px;
+}

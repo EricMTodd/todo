@@ -11,11 +11,7 @@ const indexViews = (() => {
 	const renderUserIndex = () => {
 		navViews.renderLogoutButton();
 		main.innerHTML = '';
-		// let container = document.createElement('div');
-		// let welcomeMessage = document.createElement('h1');
-		// welcomeMessage.innerText = `Welcome ${storageObject.users.loggedInUser.name}!`;
-		// container.appendChild(welcomeMessage);
-		// main.appendChild(container);
+		main.className = 'list-view';
 		listsViews.renderCreateListContainer();
 	};
 
@@ -24,6 +20,7 @@ const indexViews = (() => {
 		main.innerHTML = '';
 		const renderAboutContainer = (() => {
 			let aboutContainer = document.createElement('div');
+			aboutContainer.classList.remove('list-create-container');
 			aboutContainer.className = 'container';
 			let indexHeader = document.createElement('h1');
 			indexHeader.innerText = `Welcome to #todo!`;
