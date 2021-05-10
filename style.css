@@ -24,11 +24,6 @@ button {
 	margin: 10px 0 10px 0;
 }
 
-a {
-	text-decoration: none;
-	color: white;
-}
-
 .push {
 	margin-left: auto;
 }
@@ -45,6 +40,11 @@ a {
 
 .list-create-container input {
 	width: 250px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
 }
 
 a:hover {
@@ -65,11 +65,6 @@ footer {
 	color: white;
 	font-size: 20px;
 	height: 5vh;
-}
-
-footer a,
-p {
-	margin: 0 5px 0 0;
 }
 
 input {
@@ -117,8 +112,20 @@ nav h1 {
 	margin: 0 10px 0 10px;
 }
 
-#login-logout-button {
+#get-started-button {
+	margin: 20px 0 0 0;
+}
+
+#github-link {
+	margin: 0 0 0 5px;
+}
+
+#login-button {
 	margin: 0 5px 0 10px;
+}
+
+#logout-button {
+	margin: 0 10px 0 0;
 }
 
 #signup-button {
