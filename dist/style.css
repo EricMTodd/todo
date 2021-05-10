@@ -8,64 +8,6 @@
 	font-size: 16px;
 }
 
-a {
-	text-decoration: none;
-	color: white;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-button {
-	font-size: 18px;
-	border-radius: 10px;
-	padding: 10px;
-}
-
-nav {
-	display: flex;
-	align-items: center;
-	background-color: #235789;
-	padding: 0 10px 0 0;
-	font-size: 20px;
-	height: 10vh;
-}
-
-nav button {
-	margin: 0 0 0 10px;
-}
-
-nav h1 {
-	margin-left: 18.5%;
-	width: 50%;
-	color: white;
-}
-
-.push {
-	margin-left: auto;
-}
-
-main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: lightgray;
-	font-size: 20px;
-	height: 80vh;
-}
-
-input {
-	padding: 10px;
-	margin-bottom: 5px;
-	border-radius: 10px;
-	font-size: 20px;
-}
-
-input:focus {
-	outline: none;
-}
-
 .container {
 	width: 480px;
 	background-color: white;
@@ -82,23 +24,13 @@ button {
 	margin: 10px 0 10px 0;
 }
 
-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #235789;
+a {
+	text-decoration: none;
 	color: white;
-	font-size: 20px;
-	height: 10vh;
 }
 
-footer a,
-p {
-	margin: 0 5px 0 0;
-}
-
-#auth-buttons-container {
-	text-align: right;
+.push {
+	margin-left: auto;
 }
 
 .list-view {
@@ -113,4 +45,82 @@ p {
 
 .list-create-container input {
 	width: 250px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #235789;
+	color: white;
+	font-size: 20px;
+	height: 5vh;
+}
+
+footer a,
+p {
+	margin: 0 5px 0 0;
+}
+
+input {
+	padding: 10px;
+	margin-bottom: 5px;
+	border-radius: 10px;
+	font-size: 20px;
+}
+
+input:focus {
+	outline: none;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: lightgray;
+	font-size: 20px;
+	height: 85vh;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	background-color: #235789;
+	font-size: 20px;
+	height: 10vh;
+}
+
+nav h1 {
+	display: block;
+	margin-left: auto;
+	margin-right: 0;
+	padding-left: 72px;
+	color: white;
+	font-size: 48px;
+}
+
+#auth-buttons-container {
+	text-align: right;
+}
+
+#index-button {
+	margin: 0 10px 0 10px;
+}
+
+#login-logout-button {
+	margin: 0 5px 0 10px;
+}
+
+#signup-button {
+	margin: 0 10px 0 5px;
 }
