@@ -18,7 +18,7 @@ const navViews = (() => {
 		const renderLoginButton = (() => {
 			let button = document.createElement('button');
 			button.innerText = 'Login';
-			button.id = 'login-logout-button';
+			button.id = 'login-button';
 			button.addEventListener('click', (e) => {
 				authViews.renderLoginForm();
 			});

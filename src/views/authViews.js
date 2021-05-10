@@ -1,4 +1,5 @@
 import { authControllers } from '../controllers/authControllers';
+import { usersViews } from '../views/usersViews';
 
 const authViews = (() => {
 	const main = document.querySelector('main');
