@@ -10,8 +10,8 @@ const indexViews = (() => {
 
 	const renderUserIndex = () => {
 		navViews.renderLogoutButton();
-		main.innerHTML = '';
 		main.className = 'list-view';
+		listsViews.renderLists();
 		listsViews.renderCreateListContainer();
 	};
 

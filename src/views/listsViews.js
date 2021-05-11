@@ -7,9 +7,9 @@ const listsViews = (() => {
 
 	const renderLists = () => {
 		main.innerHTML = '';
+
 		let user = storageObject.users.loggedInUser;
 		for (let i = 0; i < user.lists.length; i++) {
-			console.log(`user.lists[i].name: ${user.lists[i].name}`);
 			let div = document.createElement('div');
 			div.className = 'container';
 			div.innerText = `${user.lists[i].name}`;
@@ -20,15 +20,14 @@ const listsViews = (() => {
 	const renderCreateListForm = () => {
 		let listCreateContainer = document.querySelector('.list-create-container');
 		listCreateContainer.innerHTML = '';
+		let form = document.createElement('form');
 
 		const renderCreateListNameInput = (() => {
-			let form = document.createElement('form');
 			let input = document.createElement('input');
 			input.id = 'list-name-input';
 			input.placeholder = 'Enter list name';
 			input.autocomplete = 'off';
 			form.appendChild(input);
-			listCreateContainer.appendChild(form);
 		})();
 
 		const renderCreateListButton = (() => {
@@ -38,16 +37,15 @@ const listsViews = (() => {
 			button.addEventListener('click', (e) => {
 				listsControllers.create(
 					document.querySelector('#list-name-input').value.trim()
-				),
-					// renderCreateListContainer();
+				);
 			});
-			listCreateContainer.appendChild(button);
+			form.appendChild(button);
 		})();
+
+		listCreateContainer.appendChild(form);
 	};
 
 	const renderCreateListContainer = () => {
-		renderLists();
-
 		let div = document.createElement('div');
 		div.className = 'container list-create-container';
 		main.appendChild(div);
@@ -64,6 +62,7 @@ const listsViews = (() => {
 
 	return {
 		renderCreateListContainer,
+		renderLists,
 	};
 })();
 
