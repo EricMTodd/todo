@@ -17,6 +17,7 @@ const navViews = (() => {
 
 		const renderLoginButton = (() => {
 			let button = document.createElement('button');
+			button.type = 'button';
 			button.innerText = 'Login';
 			button.id = 'login-button';
 			button.addEventListener('click', (e) => {
@@ -26,6 +27,7 @@ const navViews = (() => {
 		})();
 		const renderCreateUserButton = (() => {
 			let button = document.createElement('button');
+			button.type = 'type';
 			button.innerText = 'Signup';
 			button.id = 'signup-button';
 			button.addEventListener('click', (e) => {
@@ -38,6 +40,7 @@ const navViews = (() => {
 	const renderLogoutButton = () => {
 		authButtonsContainer.innerHTML = '';
 		let button = document.createElement('button');
+		button.type = 'button';
 		button.innerText = 'Logout';
 		button.id = 'logout-button';
 		button.addEventListener('click', (e) => {

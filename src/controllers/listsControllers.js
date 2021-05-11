@@ -13,8 +13,8 @@ const listsControllers = (() => {
 		}
 
 		let newList = new List(storageObject.uniqueId, name);
-		storageObject.users.loggedInUser.lists.push(newList);
 		user.lists.push(newList);
+		storageObject.users.loggedInUser = user;
 		storageObject.uniqueId++;
 		return storageControllers.save();
 	};

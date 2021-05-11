@@ -1,5 +1,6 @@
 import { storageControllers } from '../controllers/storageControllers';
 import { listsControllers } from '../controllers/listsControllers';
+import { usersControllers } from '../controllers/usersControllers';
 
 const listsViews = (() => {
 	let storageObject = storageControllers.load();
@@ -7,14 +8,30 @@ const listsViews = (() => {
 
 	const renderLists = () => {
 		main.innerHTML = '';
-
-		let user = storageObject.users.loggedInUser;
+		let user = usersControllers.find(storageObject.users.loggedInUser.email);
 		for (let i = 0; i < user.lists.length; i++) {
 			let div = document.createElement('div');
 			div.className = 'container';
 			div.innerText = `${user.lists[i].name}`;
 			main.appendChild(div);
 		}
+		renderCreateListContainer();
+	};
+
+	const renderCreateListContainer = () => {
+		let div = document.createElement('div');
+		div.className = 'container list-create-container';
+		main.appendChild(div);
+
+		const renderNewListButton = (() => {
+			let button = document.createElement('button');
+			button.innerText = 'Add new list';
+			button.type = 'button';
+			button.addEventListener('click', (e) => {
+				renderCreateListForm();
+			});
+			div.appendChild(button);
+		})();
 	};
 
 	const renderCreateListForm = () => {
@@ -34,30 +51,17 @@ const listsViews = (() => {
 			let button = document.createElement('button');
 			button.id = 'create-list-button';
 			button.innerText = 'Create list';
+			button.type = 'button';
 			button.addEventListener('click', (e) => {
 				listsControllers.create(
 					document.querySelector('#list-name-input').value.trim()
-				);
+				),
+					renderLists();
 			});
 			form.appendChild(button);
 		})();
 
 		listCreateContainer.appendChild(form);
-	};
-
-	const renderCreateListContainer = () => {
-		let div = document.createElement('div');
-		div.className = 'container list-create-container';
-		main.appendChild(div);
-
-		const renderNewListButton = (() => {
-			let button = document.createElement('button');
-			button.innerText = 'Add new list';
-			button.addEventListener('click', (e) => {
-				renderCreateListForm();
-			});
-			div.appendChild(button);
-		})();
 	};
 
 	return {

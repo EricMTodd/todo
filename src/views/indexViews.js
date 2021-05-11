@@ -10,9 +10,9 @@ const indexViews = (() => {
 
 	const renderUserIndex = () => {
 		navViews.renderLogoutButton();
+		main.innerHTML = '';
 		main.className = 'list-view';
 		listsViews.renderLists();
-		listsViews.renderCreateListContainer();
 	};
 
 	const renderNoUserIndex = () => {
@@ -29,6 +29,7 @@ const indexViews = (() => {
 			let aboutText = document.createElement('p');
 			aboutText.innerText = `#todo is a place to keep all your lists of things, whatver they may be. Simply create an account, login and start making your day to day more productive!`;
 			let button = document.createElement('button');
+			button.type = 'type';
 			button.id = 'get-started-button';
 			button.innerText = 'Get started';
 			button.addEventListener('click', (e) => {
