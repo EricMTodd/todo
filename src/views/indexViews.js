@@ -11,6 +11,7 @@ const indexViews = (() => {
 		navViews.renderLogoutButton();
 		main.innerHTML = '';
 		main.className = 'list-view';
+		navViews.renderUserName();
 		listsViews.renderLists();
 	};
 

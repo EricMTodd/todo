@@ -14,6 +14,7 @@ const listsViews = (() => {
 			let div = document.createElement('div');
 			div.className = 'container';
 			div.id = `list-${user.lists[i].id}`;
+			div.dataset.id = user.lists[i].id;
 			div.innerText = `${user.lists[i].name}`;
 			main.appendChild(div);
 		}

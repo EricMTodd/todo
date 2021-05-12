@@ -149,7 +149,7 @@ const authControllers = (() => {
 			storageControllers.save();
 			return indexViews.renderUserIndex();
 		}
-		return console.log(`Failed to log ${user.name} in.`);
+		return alert(`Failed to log ${user.name} in.`);
 	};
 
 	const logout = () => {

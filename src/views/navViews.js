@@ -2,9 +2,10 @@ import { indexViews } from './indexViews';
 import { usersViews } from './usersViews';
 import { authViews } from './authViews';
 import { authControllers } from '../controllers/authControllers';
+import { storageControllers } from '../controllers/storageControllers';
 
 const navViews = (() => {
-	let nav = document.querySelector('nav');
+	let storageObject = storageControllers.load();
 	let indexButton = document.querySelector('#index-button');
 	indexButton.addEventListener('click', (e) => {
 		indexViews.checkLogin();
@@ -49,9 +50,15 @@ const navViews = (() => {
 		authButtonsContainer.appendChild(button);
 	};
 
+	const renderUserName = () => {
+		let todoHeader = document.querySelector('#todo-header');
+		todoHeader.innerText = `${storageObject.users.loggedInUser.name}'s lists`;
+	};
+
 	return {
 		renderLoginButtons,
 		renderLogoutButton,
+		renderUserName,
 	};
 })();
 
