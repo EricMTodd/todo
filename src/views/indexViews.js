@@ -1,4 +1,3 @@
-import { authControllers } from '../controllers/authControllers';
 import { storageControllers } from '../controllers/storageControllers';
 import { authViews } from '../views/authViews';
 import { navViews } from '../views/navViews';
