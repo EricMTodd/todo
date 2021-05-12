@@ -12,6 +12,7 @@ const listsViews = (() => {
 		for (let i = 0; i < user.lists.length; i++) {
 			let div = document.createElement('div');
 			div.className = 'container';
+			div.id = `list-${user.lists[i].id}`;
 			div.innerText = `${user.lists[i].name}`;
 			main.appendChild(div);
 		}

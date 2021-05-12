@@ -1,8 +1,8 @@
-class ListItem {
+class Task {
 	constructor(description) {
 		this.completed = false;
 		this.description = description;
 	}
 }
 
-export { listItem };
+export { Task };
