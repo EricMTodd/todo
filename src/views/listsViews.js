@@ -1,6 +1,7 @@
 import { storageControllers } from '../controllers/storageControllers';
 import { listsControllers } from '../controllers/listsControllers';
 import { usersControllers } from '../controllers/usersControllers';
+import { tasksViews } from './tasksViews';
 
 const listsViews = (() => {
 	let storageObject = storageControllers.load();
@@ -17,6 +18,7 @@ const listsViews = (() => {
 			main.appendChild(div);
 		}
 		renderCreateListContainer();
+		tasksViews.renderCreateTaskForms();
 	};
 
 	const renderCreateListContainer = () => {

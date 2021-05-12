@@ -5,7 +5,7 @@ const tasksViews = (() => {
 	let storageObject = storageControllers.load();
 	let user = usersControllers.find(storageObject.users.loggedInUser.email);
 
-	const renderCreateListItemForms = () => {
+	const renderCreateTaskForms = () => {
 		for (let i = 0; i < user.lists.length; i++) {
 			let list = document.querySelector(`#list-${user.lists[i].id}`);
 			let form = document.createElement('form');
@@ -27,7 +27,7 @@ const tasksViews = (() => {
 	};
 
 	return {
-		renderCreateListItemForms,
+		renderCreateTaskForms,
 	};
 })();
 

@@ -1,9 +1,8 @@
-// import { authControllers } from '../controllers/authControllers';
+import { authControllers } from '../controllers/authControllers';
 import { storageControllers } from '../controllers/storageControllers';
 import { authViews } from '../views/authViews';
 import { navViews } from '../views/navViews';
 import { listsViews } from '../views/listsViews';
-import { tasksViews } from './tasksViews';
 
 const indexViews = (() => {
 	let storageObject = storageControllers.load();
@@ -14,7 +13,6 @@ const indexViews = (() => {
 		main.innerHTML = '';
 		main.className = 'list-view';
 		listsViews.renderLists();
-		tasksViews.renderCreateListItemForms();
 	};
 
 	const renderNoUserIndex = () => {
