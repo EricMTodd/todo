@@ -43,6 +43,14 @@ button {
 	width: 250px;
 }
 
+.task-container {
+	width: 314px;
+	padding: 15px 0 15px 0;
+	border: 2px solid gray;
+	border-radius: 10px;
+	margin: 10px 0 10px 0;
+}
+
 a {
 	text-decoration: none;
 	color: white;
