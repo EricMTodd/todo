@@ -19,6 +19,7 @@ const listsViews = (() => {
 			main.appendChild(div);
 		}
 		renderCreateListContainer();
+		tasksViews.renderTasks();
 		tasksViews.renderCreateTaskForms();
 	};
 
