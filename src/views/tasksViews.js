@@ -34,12 +34,23 @@ const tasksViews = (() => {
 		let user = usersControllers.find(storageObject.users.loggedInUser.email);
 		for (let i = 0; i < user.lists.length; i++) {
 			let listContainer = document.querySelector(`#list-${user.lists[i].id}`);
-			console.log(user.lists[i].tasks);
 			for (let j = 0; j < user.lists[i].tasks.length; j++) {
-				console.log(user.lists[i].tasks[j]);
 				let div = document.createElement('div');
 				div.className = 'task-container';
-				div.innerText = `${user.lists[i].tasks[j].description}`;
+
+				let p = document.createElement('p');
+				p.className = 'task-description-container';
+				p.innerText = `${user.lists[i].tasks[j].description}`;
+
+				let button = document.createElement('button');
+				button.type = 'button';
+				button.className = 'task-destroy-button';
+				button.innerText = 'x';
+				button.addEventListener('click', (e) => {
+					tasksControllers.destroy();
+				});
+				div.appendChild(p);
+				div.appendChild(button);
 				listContainer.appendChild(div);
 			}
 		}

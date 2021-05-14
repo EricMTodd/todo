@@ -140,3 +140,21 @@ nav h1 {
 #signup-button {
 	margin: 0 10px 0 5px;
 }
+
+.task-container {
+	margin: 0 auto;
+	height: 50px;
+}
+
+.task-description-container {
+	float: left;
+}
+
+.task-destroy-button {
+	float: right;
+	vertical-align: middle;
+	border: none;
+	color: red;
+	font-size: 32px;
+	padding: 0 10px 0 10px;
+}

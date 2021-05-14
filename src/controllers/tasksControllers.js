@@ -5,6 +5,10 @@ import { Task } from '../models/taskModel';
 const tasksControllers = (() => {
 	let storageObject = storageControllers.load();
 
+	const destroy = () => {
+		console.log('Hi Caitlyn!');
+	};
+
 	const create = (data, inputValue) => {
 		if (inputValue === '') {
 			return alert('Please enter a task.');
@@ -13,13 +17,9 @@ const tasksControllers = (() => {
 		let listId = Number(data.id);
 
 		for (let i = 0; i < user.lists.length; i++) {
-			console.log(`user.lists[i].id: ${user.lists[i].id}`);
 			if (listId === user.lists[i].id) {
 				let newTask = new Task(storageObject.uniqueId, inputValue);
 				storageObject.uniqueId++;
-
-				console.log(newTask);
-				console.log(user.lists[i]);
 				user.lists[i].tasks.push(newTask);
 				storageObject.users.loggedInUser = user;
 				return storageControllers.save();
@@ -28,6 +28,7 @@ const tasksControllers = (() => {
 	};
 	return {
 		create,
+		destroy,
 	};
 })();
 
