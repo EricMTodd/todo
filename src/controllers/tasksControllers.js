@@ -4,6 +4,7 @@ import { Task } from '../models/taskModel';
 
 const tasksControllers = (() => {
 	let storageObject = storageControllers.load();
+
 	const create = (data, inputValue) => {
 		if (inputValue === '') {
 			return alert('Please enter a task.');
