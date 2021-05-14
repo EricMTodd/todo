@@ -10,16 +10,12 @@ Lesson link: https://www.theodinproject.com/paths/full-stack-javascript/courses/
 
 ### Users can create lists
 
-- Create index views and styling.
-- Create containers to display functions like login buttons, accounts, so on and so forth.
-- When a user is logged in show lists creation and list display together
+- Complete
 
-### Users can rename lists
+### Users can create tasks
 
-### Users can add items to their lists
+- Complete
 
-### Users can update items on their lists
-
-### Users can delete list items
+### Users can delete tasks
 
 ### Users can delete lists
