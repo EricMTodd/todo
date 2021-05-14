@@ -142,18 +142,23 @@ nav h1 {
 }
 
 .task-container {
-	margin: 0 auto;
-	height: 50px;
+	display: inline-block;
+	vertical-align: middle;
+
+	margin: 10 auto;
+	padding: 0 10px 0 10px;
+	height: 75px;
 }
 
 .task-description-container {
-	float: left;
+	position: absolute;
+	width: 250px;
+	word-wrap: break-word;
+	text-align: left;
 }
 
 .task-destroy-button {
-	float: right;
-	vertical-align: middle;
-	border: none;
+	margin-left: 275px;
 	color: red;
 	font-size: 32px;
 	padding: 0 10px 0 10px;
