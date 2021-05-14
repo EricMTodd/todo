@@ -1,12 +1,28 @@
 import { storageControllers } from './storageControllers';
 import { usersControllers } from './usersControllers';
 import { Task } from '../models/taskModel';
+import { listsViews } from '../views/listsViews';
 
 const tasksControllers = (() => {
 	let storageObject = storageControllers.load();
 
-	const destroy = () => {
-		console.log('Hi Caitlyn!');
+	const find = (id) => {
+		let user = usersControllers.find(storageObject.users.loggedInUser.email);
+		for (let i = 0; i < user.lists.length; i++) {
+			for (let j = 0; j < user.lists[i].tasks.length; j++) {
+				if (id === user.lists[i].tasks[j].id) {
+					user.lists[i].tasks.splice(j, 1);
+					storageObject.loggedInUser = user;
+					storageControllers.save();
+					return listsViews.renderLists();
+				}
+			}
+		}
+		return console.log('no match');
+	};
+
+	const destroy = (id) => {
+		find(id);
 	};
 
 	const create = (data, inputValue) => {
@@ -27,6 +43,7 @@ const tasksControllers = (() => {
 		}
 	};
 	return {
+		find,
 		create,
 		destroy,
 	};

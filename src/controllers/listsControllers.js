@@ -5,6 +5,10 @@ import { usersControllers } from './usersControllers';
 const listsControllers = (() => {
 	let storageObject = storageControllers.load();
 
+	const find = () => {
+		console.log('listFind');
+	};
+
 	const create = (name) => {
 		let user = usersControllers.find(storageObject.users.loggedInUser.email);
 
