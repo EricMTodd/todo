@@ -6,7 +6,7 @@ import { listsViews } from '../views/listsViews';
 const tasksControllers = (() => {
 	let storageObject = storageControllers.load();
 
-	const find = (id) => {
+	const destroy = (id) => {
 		let user = usersControllers.find(storageObject.users.loggedInUser.email);
 		for (let i = 0; i < user.lists.length; i++) {
 			for (let j = 0; j < user.lists[i].tasks.length; j++) {
@@ -19,10 +19,6 @@ const tasksControllers = (() => {
 			}
 		}
 		return console.log('no match');
-	};
-
-	const destroy = (id) => {
-		find(id);
 	};
 
 	const create = (data, inputValue) => {
@@ -43,7 +39,6 @@ const tasksControllers = (() => {
 		}
 	};
 	return {
-		find,
 		create,
 		destroy,
 	};
