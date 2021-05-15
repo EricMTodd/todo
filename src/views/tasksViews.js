@@ -20,6 +20,7 @@ const tasksViews = (() => {
 
 			let button = document.createElement('button');
 			button.type = 'button';
+			button.className = 'task-create-button';
 			button.innerText = 'Save';
 			button.addEventListener('click', (e) => {
 				tasksControllers.create(list.dataset, input.value.trim());
