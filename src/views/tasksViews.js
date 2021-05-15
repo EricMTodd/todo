@@ -43,8 +43,8 @@ const tasksViews = (() => {
 
 				let button = document.createElement('button');
 				button.type = 'button';
-				button.className = 'task-destroy-button';
-				button.innerText = 'x';
+				button.className = 'destroy-button';
+				button.innerText = 'X';
 				button.addEventListener('click', (e) => {
 					tasksControllers.destroy(user.lists[i].tasks[j].id);
 				});

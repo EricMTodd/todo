@@ -18,6 +18,7 @@ const listsViews = (() => {
 			div.innerText = `${user.lists[i].name}`;
 
 			let button = document.createElement('button');
+			button.className = 'destroy-button';
 			button.innerText = 'X';
 			button.addEventListener('click', (e) => {
 				listsControllers.destroy(user.lists[i].id);
