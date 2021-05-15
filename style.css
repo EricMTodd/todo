@@ -140,9 +140,3 @@ nav h1 {
 #signup-button {
 	margin: 0 10px 0 5px;
 }
-
-.task-destroy-button {
-	color: red;
-	font-size: 32px;
-	padding: 0 10px 0 10px;
-}
