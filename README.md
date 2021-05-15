@@ -18,6 +18,10 @@ Lesson link: https://www.theodinproject.com/paths/full-stack-javascript/courses/
 
 ### Users can delete tasks
 
-### Users can mark tasks as complete
+- Complete
 
 ### Users can delete lists
+
+- Complete
+
+### Users can mark tasks as complete

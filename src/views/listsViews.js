@@ -16,6 +16,13 @@ const listsViews = (() => {
 			div.id = `list-${user.lists[i].id}`;
 			div.dataset.id = user.lists[i].id;
 			div.innerText = `${user.lists[i].name}`;
+
+			let button = document.createElement('button');
+			button.innerText = 'X';
+			button.addEventListener('click', (e) => {
+				listsControllers.destroy(user.lists[i].id);
+			});
+			div.appendChild(button);
 			main.appendChild(div);
 		}
 		renderCreateListContainer();

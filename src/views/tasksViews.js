@@ -39,10 +39,7 @@ const tasksViews = (() => {
 				div.id = `task-${user.lists[i].tasks[j].id}`;
 				div.dataset.id = user.lists[i].tasks[j].id;
 				div.className = 'task-container';
-
-				let p = document.createElement('p');
-				p.className = 'task-description-container';
-				p.innerText = `${user.lists[i].tasks[j].description}`;
+				div.innerText = user.lists[i].tasks[j].description;
 
 				let button = document.createElement('button');
 				button.type = 'button';
@@ -51,7 +48,6 @@ const tasksViews = (() => {
 				button.addEventListener('click', (e) => {
 					tasksControllers.destroy(user.lists[i].tasks[j].id);
 				});
-				div.appendChild(p);
 				div.appendChild(button);
 				listContainer.appendChild(div);
 			}

@@ -1,12 +1,23 @@
 import { List } from '../models/listModel';
 import { storageControllers } from './storageControllers';
 import { usersControllers } from './usersControllers';
+import { listsViews } from '../views/listsViews';
 
 const listsControllers = (() => {
 	let storageObject = storageControllers.load();
 
-	const find = () => {
-		console.log('listFind');
+	const destroy = (id) => {
+		let user = usersControllers.find(storageObject.users.loggedInUser.email);
+
+		for (let i = 0; i < user.lists.length; i++) {
+			if (id === user.lists[i].id) {
+				user.lists.splice(i, 1);
+				storageObject.loggedInUser = user;
+				storageControllers.save();
+				return listsViews.renderLists();
+			}
+		}
+		return console.log('no match');
 	};
 
 	const create = (name) => {
@@ -25,6 +36,7 @@ const listsControllers = (() => {
 
 	return {
 		create,
+		destroy,
 	};
 })();
 
