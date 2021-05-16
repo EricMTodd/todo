@@ -86,7 +86,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Task\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\n\tconstructor(id, description) {\n\t\tthis.id = id;\n\t\tthis.completed = false;\n\t\tthis.description = description;\n\t}\n}\n\n\n\n\n//# sourceURL=webpack:///./src/models/taskModel.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Task\": () => (/* binding */ Task)\n/* harmony export */ });\nclass Task {\n\tconstructor(id, description) {\n\t\tthis.id = id;\n\t\tthis.description = description;\n\t}\n}\n\n\n\n\n//# sourceURL=webpack:///./src/models/taskModel.js?");
 
 /***/ }),
 
