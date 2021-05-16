@@ -23,5 +23,3 @@ Lesson link: https://www.theodinproject.com/paths/full-stack-javascript/courses/
 ### Users can delete lists
 
 - Complete
-
-### Users can mark tasks as complete
